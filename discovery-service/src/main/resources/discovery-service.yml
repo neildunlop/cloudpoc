@@ -1,0 +1,16 @@
+# Configure this Discovery Server
+eureka:
+  instance:
+    hostname: localhost
+  client:  # Not a client, don't register with yourself
+    registerWithEureka: false
+    fetchRegistry: false
+
+    #comment these back in when we have the config service working
+    #serviceUrl:
+    #        defaultZone: http://discovery:${server.port}/eureka/
+    #
+    #  spring.cloud.config.discovery.enabled: true
+
+server:
+  port: 1111   # HTTP (Tomcat) port

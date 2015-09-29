@@ -1,0 +1,23 @@
+#WE NEED TO DECIDE IF WE ARE CONFIG FIRST OR EUREKA FIRST - MOST GO CONFIG FIRST
+  #Config Service Settings below here
+  #==================================
+  #Think we can make the config server file backed.. but dont know how to set that yet.. and dont know what the structure is that
+  #should go in here
+
+  #See: http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_environment_repository
+
+
+  #This tells it to use a git repo:
+  spring.cloud.config.server.git.uri: https://github.com/neildunlop/config-repo
+
+
+  #By accessing http://localhost:8080/{name}/{env}/{label}, you can get the configuration for each environment(profile) of each application.
+
+  #You can regard
+  #'name' as application name
+  #'env' as profile name (default is default)
+  #'label' as branch name (default is master)
+  #label can be omitted.
+
+  #By accessing http://localhost:8080/foo/default ,you can get the configuration of foo.properties.
+  #By accessing http://localhost:8080/foo/development ,you can get the configuration foo.properties overwritten by foo-development.properties.
